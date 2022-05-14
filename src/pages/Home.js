@@ -5,20 +5,6 @@ import Table from "../components/home/Table";
 import ToTop from "../components/home/ToTop";
 
 const App = ({ allCoins }) => {
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     const isHome = document.querySelector(".table-header");
-
-  //     if (window.scrollY > 145) {
-  //       if (isHome.length > 0)
-  //         document.querySelector(".table-header").classList.add("active");
-  //     } else {
-  //       if (isHome.length > 0)
-  //         document.querySelector(".table-header").classList.remove("active");
-  //     }
-  //   });
-  // }, []);
-
   return (
     <div className="app-container">
       <header>

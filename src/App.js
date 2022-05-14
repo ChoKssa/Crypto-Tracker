@@ -24,7 +24,7 @@ const App = () => {
         ></Route>
 
         {coinsData &&
-          coinsData.map((coin) => (
+          coinsData.map((coin, index) => (
             <Route
               path={
                 "/" +
@@ -34,7 +34,8 @@ const App = () => {
                   .replace(" ", "-")
                   .replace(" ", "-")
               }
-              element={<InfosCoins key={coin.symbol} coin={coin} />}
+              element={<InfosCoins key={coin.id} coin={coin} />}
+              key={index}
             ></Route>
           ))}
         <Route

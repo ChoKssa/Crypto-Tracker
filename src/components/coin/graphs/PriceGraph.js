@@ -8,9 +8,9 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import colors from "../../styles/_settings.scss";
+import colors from "../../../styles/_settings.scss";
 
-const MktCap = ({ coinId }) => {
+const PriceGraph = ({ coinId }) => {
   const [duration, setDuration] = useState(1);
   const [coinData, setCoinData] = useState([]);
   const [windowWidth, setWindowWidth] = useState(680);
@@ -48,22 +48,20 @@ const MktCap = ({ coinId }) => {
         }`
       )
       .then((res) => {
-        for (let i = 0; i < res.data.market_caps.length; i++) {
-          let price = res.data.market_caps[i][1];
+        for (let i = 0; i < res.data.prices.length; i++) {
+          let price = res.data.prices[i][1];
 
           dataArray.push({
-            date: new Date(res.data.market_caps[i][0]).toLocaleDateString(),
-            marketcap: price < "50" ? price : parseInt(price),
+            date: new Date(res.data.prices[i][0]).toLocaleDateString(),
+            price: price < "50" ? price : parseInt(price),
           });
         }
-
         setCoinData(dataArray);
       });
   }, [duration, coinId]);
-
   return (
-    <div className="mkt-cap-graph graph">
-      <h4>Capitalisation boursière</h4>
+    <div className="price-graph graph">
+      <h4>Valeur</h4>
       <div className="btn-container">
         {chartDuration.map((el) => {
           return (
@@ -82,7 +80,7 @@ const MktCap = ({ coinId }) => {
         width={windowWidth}
         height={250}
         data={coinData}
-        margin={{ top: 20, right: 5, left: 50, bottom: 0 }}
+        margin={{ top: 20, right: 5, left: 30, bottom: 0 }}
       >
         <defs>
           <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -96,7 +94,7 @@ const MktCap = ({ coinId }) => {
         <Tooltip />
         <Area
           type="monotone"
-          dataKey="marketcap"
+          dataKey="price"
           strokes={colors.color1}
           fillOpacity={1}
           fill="url(#colorUv)"
@@ -106,4 +104,4 @@ const MktCap = ({ coinId }) => {
   );
 };
 
-export default MktCap;
+export default PriceGraph;

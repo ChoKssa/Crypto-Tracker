@@ -27,6 +27,11 @@ $shadow: 0 5px 15px rgba(0, 0, 0, 0.322);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  &::selection {
+    background: $color1;
+    color: $white1;
+  }
 }
 
 html {

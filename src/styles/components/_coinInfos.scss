@@ -1,6 +1,13 @@
 .coin-presentation {
     .logo-coin {
-        max-width: 100px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 30px;
+
+        img {
+            margin-left: 15px;
+        }
+
         p {
             color: $white1;
         }
@@ -8,11 +15,37 @@
         .home-btn {
             cursor: pointer;
         }
+
+        h1 {
+            color: $color1;
+            font-size: 3rem;
+
+            @media screen and (max-width: 420px) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    h2 {
+        margin: 40px 10px 0px 40px;
+        font-size: 3rem;
+        border-bottom: 3px solid $white1;
+        max-width: 255px;
+
+        @media screen and (max-width: 1437px) {
+            font-size: 2rem;
+            max-width: 170px;
+            margin-left: 10px;
+        }
     }
 
     .graphs {
         padding: 10px 10px;
-        margin: 50px 0;
+        margin: 4px 0;
+
+        @media screen and (max-width: 1437px) {
+            margin: 20px 0 0 0;
+        }
        
         .presentation-container {
             display: flex;
@@ -20,7 +53,6 @@
             justify-content: space-around;
             opacity: 0;
             transition: .3s;
-            // align-items: center;
 
             .text-presentation {
                 max-width: 700px;
@@ -46,6 +78,10 @@
             margin: 50px 10px;
             background: rgb(22, 20, 20);
             border-radius: 10px;
+
+            @media screen and (max-width: 1437px) {
+                margin: 10px 0 50px 0;
+            }
     
             h4 {
                 font-weight: bold;
@@ -66,7 +102,7 @@
                 }
 
                 .filter.filter-active {
-                     background: $color1;
+                    background: $color1;
                 }
             }
         }

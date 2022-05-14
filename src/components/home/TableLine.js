@@ -43,6 +43,8 @@ const TableLine = ({ coin, index }) => {
               {showChart && <CoinChart coinId={coin.id} coinName={coin.name} />}
             </div>
           </div>
+          <h4>{coin.name}</h4>
+          <span>- {coin.symbol.toUpperCase()}</span>
           <NavLink
             to={
               "/" +
@@ -54,23 +56,8 @@ const TableLine = ({ coin, index }) => {
             }
             className="link-page"
           >
-            <h4>{coin.name}</h4>
-          </NavLink>
-          <span>- {coin.symbol.toUpperCase()}</span>
-          <a
-            target="_blank"
-            rel="noreferrer noopener"
-            href={
-              "https://www.coingecko.com/fr/pi%C3%A8ces/" +
-              coin.name
-                .toLowerCase()
-                .replace(" ", "-")
-                .replace(" ", "-")
-                .replace(" ", "-")
-            }
-          >
             <img src="./assets/info-icon.svg" alt="info" />
-          </a>
+          </NavLink>
         </div>
       </div>
       <p>{priceFormater(coin.current_price).toLocaleString()} $</p>

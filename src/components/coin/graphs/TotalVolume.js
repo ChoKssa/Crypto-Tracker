@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import colors from "../../styles/_settings.scss";
+import colors from "../../../styles/_settings.scss";
 
 const TotalVolume = ({ coinId }) => {
   const [duration, setDuration] = useState(1);
@@ -62,7 +62,7 @@ const TotalVolume = ({ coinId }) => {
 
   return (
     <div className="total-volumes-graph graph">
-      <h4>Volumes Totaux</h4>
+      <h4>Volume Total</h4>
       <div className="btn-container">
         {chartDuration.map((el) => {
           return (

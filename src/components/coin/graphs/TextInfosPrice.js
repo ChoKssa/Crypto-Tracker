@@ -34,6 +34,10 @@ const TextInfosPrice = ({ coin }) => {
         cette dernière heure.
       </p>
       <p>
+        Il est à {Math.abs(coin.ath_change_percentage).toFixed(2)}% de son ATH
+        (pic maximum atteint).
+      </p>
+      <p>
         Son pic est atteint {createDate(coin.ath_date)} au prix de{" "}
         {coin.ath < 1 ? coin.ath : coin.ath.toLocaleString()} dollars tandis que
         son prix le plus bas fut à hauteur de{" "}

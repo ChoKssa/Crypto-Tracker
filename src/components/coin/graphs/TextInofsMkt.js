@@ -20,12 +20,19 @@ const TextInofsMkt = ({ coin }) => {
       <p>
         Par exemple, il y a actuellement{" "}
         {coin.circulating_supply.toLocaleString()} {coin.name} en circulation à
-        un prix de {coin.current_price.toLocaleString()} dollars l'unité.
+        un prix de{" "}
+        {coin.current_price < 0.5
+          ? coin.current_price
+          : coin.current_price.toLocaleString()}{" "}
+        dollars l'unité.
       </p>
       <p>
         La capitalisation boursière du {coin.name} est donc de{" "}
         {coin.circulating_supply.toLocaleString()} x{" "}
-        {coin.current_price.toLocaleString()} ={" "}
+        {coin.current_price < 0.5
+          ? coin.current_price
+          : coin.current_price.toLocaleString()}{" "}
+        ={" "}
         {computeMktCap(
           coin.circulating_supply,
           coin.current_price
