@@ -37,6 +37,10 @@
             max-width: 170px;
             margin-left: 10px;
         }
+
+        @media screen and (max-width: 420px) {
+            font-size: 1.5rem;
+        }
     }
 
     .graphs {
