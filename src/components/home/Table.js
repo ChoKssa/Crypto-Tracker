@@ -4,7 +4,7 @@ import TableLine from "./TableLine";
 import ToTop from "./ToTop";
 
 const Table = ({ coinsData }) => {
-  const [rangeNumber, setRangeNumber] = useState(100);
+  const [research, setResearch] = useState("");
   const [orderBy, setOrderBy] = useState("");
   const showStable = useSelector((state) => state.stableReducer);
   const showList = useSelector((state) => state.listReducer);
@@ -54,21 +54,11 @@ const Table = ({ coinsData }) => {
     <div className="table-container">
       <ul className="table-header">
         <div className="range-container">
-          <span>
-            Top{" "}
-            <input
-              type="text"
-              value={rangeNumber}
-              onChange={(e) => setRangeNumber(e.target.value)}
-            />
-          </span>
-          <input
-            type="range"
-            min="1"
-            max="250"
-            value={rangeNumber}
-            onChange={(e) => setRangeNumber(e.target.value)}
-          />
+          {/* Search Bar HERE */}
+          <div className="search-bar">
+            Rechercher
+            <input type="text" onChange={(e) => setResearch(e.target.value)} />
+          </div>
           <ToTop />
         </div>
         {tableHeader.map((el) => (
@@ -94,7 +84,6 @@ const Table = ({ coinsData }) => {
       </ul>
       {coinsData &&
         coinsData
-          .slice(0, rangeNumber)
           .filter((coin) => {
             if (showList) {
               let list = window.localStorage.coinList.split(",");
@@ -202,9 +191,20 @@ const Table = ({ coinsData }) => {
                 return null;
             }
           })
-          .map((coin, index) => (
-            <TableLine coin={coin} index={index} key={index} />
-          ))}
+          .map((coin, index) => {
+            if (research.length < 3) {
+              return <TableLine coin={coin} index={index} key={index} />;
+            } else {
+              if (
+                coin.name.toLowerCase().includes(research.toLowerCase()) ||
+                coin.symbol.toLowerCase().includes(research.toLowerCase())
+              ) {
+                return <TableLine coin={coin} index={index} key={index} />;
+              } else {
+                return null;
+              }
+            }
+          })}
     </div>
   );
 };

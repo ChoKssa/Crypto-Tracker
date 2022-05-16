@@ -17,7 +17,7 @@ const TextInfosVolume = ({ coin }) => {
       <br />
       <p>
         Actuellement, le volume total du {coin.name} est de{" "}
-        {coin.total_volume.toLocaleString()}.
+        {coin.total_volume.toLocaleString()} {coin.symbol.toUpperCase()}.
       </p>
     </div>
   );
