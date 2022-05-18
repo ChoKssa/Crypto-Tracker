@@ -30,11 +30,9 @@
         margin: 40px 10px 0px 40px;
         font-size: 3rem;
         border-bottom: 3px solid $white1;
-        max-width: 255px;
 
         @media screen and (max-width: 1437px) {
             font-size: 2rem;
-            max-width: 170px;
             margin-left: 10px;
         }
 
