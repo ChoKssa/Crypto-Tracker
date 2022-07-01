@@ -16,7 +16,7 @@ const TextInofsMkt = ({ coin }) => {
         de croissance d'une cryptomonnaie et dans quelle mesure elle est sûre à
         l'achat, par rapport à d'autres.
       </p>
-      <br></br>
+      <br />
       <p>
         Par exemple, il y a actuellement{" "}
         {coin.circulating_supply.toLocaleString()} {coin.name} en circulation à
