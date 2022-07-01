@@ -28,7 +28,7 @@ const App = () => {
         <Route
           path="/"
           element={<Home key="home" allCoins={coinsData} />}
-        ></Route>
+         />
 
         {coinsData &&
           coinsData.map((coin, index) => (
@@ -43,12 +43,12 @@ const App = () => {
               }
               element={<InfosCoins key={coin.id} coin={coin} />}
               key={index}
-            ></Route>
+             />
           ))}
         <Route
           path="*"
           element={<Home key="error" allCoins={coinsData} />}
-        ></Route>
+         />
       </Routes>
     </BrowserRouter>
   );
