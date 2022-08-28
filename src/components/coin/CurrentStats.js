@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import MktCap from "./graphs/MktCap";
 import PriceGraph from "./graphs/PriceGraph";
-import TextInfosPrice from "./graphs//TextInfosPrice";
-import TextInfosVolume from "./graphs//TextInfosVolume";
-import TextInofsMkt from "./graphs//TextInofsMkt";
-import TotalVolume from "./graphs//TotalVolume";
+import TextInfosPrice from "./graphs/TextInfosPrice";
+import TextInfosVolume from "./graphs/TextInfosVolume";
+import TextInofsMkt from "./graphs/TextInofsMkt";
+import TotalVolume from "./graphs/TotalVolume";
 
 const CurrentStats = ({ coin }) => {
   useEffect(() => {
